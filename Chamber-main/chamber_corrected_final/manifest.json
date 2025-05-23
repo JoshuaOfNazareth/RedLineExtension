@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "Chamber",
+  "version": "1.4",
+  "description": "Rewrite headlines and blurbs into ideological perspectives instantly.",
+  "permissions": ["activeTab", "storage", "scripting"],
+  "host_permissions": ["<all_urls>"],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "css": ["styles/contentStyles.css"]
+    }
+  ]
+}

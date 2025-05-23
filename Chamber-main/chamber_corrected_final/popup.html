@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Chamber Extension</title>
+  <link rel="stylesheet" href="styles/popup.css">
+</head>
+<body>
+  <div class="popup-container">
+    <h1 class="extension-title">Chamber</h1>
+
+    <div class="input-group">
+      <label for="perspective">Perspective:</label>
+      <select id="perspective">
+        <option value="original">Original</option>
+        <option value="liberal">Liberal</option>
+        <option value="conservative">Conservative</option>
+        <option value="radical black left">Radical Black Left</option>
+        <option value="neoliberal">Neoliberal</option>
+        <option value="techno-utopian">Techno-utopian</option>
+        <option value="socialist">Socialist</option>
+        <option value="christian nationalist">Christian Nationalist</option>
+        <option value="zionist">Zionist</option>
+        <option value="anti-zionist">Anti-Zionist</option>
+        <option value="accelerationist">Accelerationist</option>
+        <option value="anarchist">Anarchist</option>
+        <option value="populist left">Populist Left</option>
+        <option value="populist right">Populist Right</option>
+        <option value="conspiracy-core">Conspiracy-core</option>
+        <option value="climate doomer">Climate Doomer</option>
+        <option value="pan-africanist">Pan-Africanist</option>
+        <option value="feminist">Feminist</option>
+        <option value="libertarian">Libertarian</option>
+        <option value="eco-socialist">Eco-socialist</option>
+        <option value="transhumanist">Transhumanist</option>
+      </select>
+    </div>
+
+    <div class="input-group toggle">
+      <input type="checkbox" id="simplified">
+      <label for="simplified">Simplified Language</label>
+    </div>
+
+    <button id="rewriteBtn">Rewrite Page</button>
+
+    <div id="status" class="status-message"></div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

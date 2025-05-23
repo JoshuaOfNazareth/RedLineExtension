@@ -1,0 +1,56 @@
+/* styles/contentStyles.css */
+
+/* Global blur/dim effect when rewriting is active */
+body.chamber-rewriting-active {
+  /* Apply to children of body, not body itself, to avoid issues with fixed/absolute elements */
+}
+
+body.chamber-rewriting-active *:not(.chamber-no-blur):not(script):not(style):not(link):not(meta):not(title) {
+  filter: blur(2px) grayscale(50%); /* Subtle blur and desaturation */
+  transition: filter 0.3s ease-in-out;
+  pointer-events: none; /* Prevent clicks during rewrite */
+  user-select: none; /* Prevent text selection */
+  cursor: default;
+}
+
+/* Specific elements being processed (before the new text fills in) */
+.chamber-processing {
+  color: transparent !important; /* Hide original text without removing it from DOM flow */
+  background-color: rgba(200, 200, 200, 0.3); /* Grey background placeholder */
+  min-height: 1.2em; /* Ensure some height for empty elements, roughly line-height */
+  display: block; /* Ensure it takes up space, important for inline elements like `b` */
+  border-radius: 3px;
+  position: relative; /* For the shimmer effect */
+  overflow: hidden; /* To contain background animation */
+  /* This prevents text from wrapping if it became too short */
+  white-space: normal !important;
+  word-break: break-word !important;
+  box-sizing: border-box !important; /* Ensure padding doesn't affect width */
+}
+
+/* Shimmer animation for placeholder */
+.chamber-processing::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,.5), transparent);
+  animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+/* Optional: You can use this class to prevent specific elements from being blurred. */
+/* .chamber-no-blur { filter: none !important; pointer-events: auto !important; user-select: auto !important; } */
+
+/* Optional: Add a class to prevent elements from being rewritten at all */
+/* .chamber-no-rewrite { /* Your styles for non-rewritable elements, e.g., slightly dimmed */ /* } */
