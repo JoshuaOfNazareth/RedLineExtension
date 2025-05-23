@@ -1,6 +1,6 @@
-# Chamber
+# RedLine
 
-**Chamber is a Chrome extension that rewrites headlines and blurbs on web pages into various ideological perspectives instantly. It aims to help users understand how language can be used to frame information from different viewpoints.**
+**RedLine is a Chrome extension that rewrites headlines and blurbs on web pages into various ideological perspectives instantly. It aims to help users understand how language can be used to frame information from different viewpoints.**
 
 ## Features
 
@@ -35,7 +35,7 @@
 
 ## How to Use
 
-1.  Once installed, click on the Chamber extension icon in your Chrome toolbar.
+1.  Once installed, click on the RedLine extension icon in your Chrome toolbar.
 2.  The popup will appear.
 3.  Select your desired ideological perspective from the dropdown menu.
 4.  Check the "Simplified Language" box if you want the output to be easier to read.
